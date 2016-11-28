@@ -4,8 +4,9 @@
 // It is a manager for a DayGrid subcomponent, which does most of the heavy lifting.
 // It is responsible for managing width/height.
 
-var BasicView = fcViews.basic = View.extend({
+var BasicView = FC.BasicView = View.extend({
 
+	dayGridClass: DayGrid, // class the dayGrid will be instantiated from (overridable by subclasses)
 	dayGrid: null, // the main subcomponent that does most of the heavy lifting
 
 	dayNumbersVisible: false, // display day numbers on each day cell?
@@ -13,12 +14,22 @@ var BasicView = fcViews.basic = View.extend({
 
 	weekNumberWidth: null, // width of all the week-number cells running down the side
 
+	headContainerEl: null, // div that hold's the dayGrid's rendered date header
 	headRowEl: null, // the fake row element of the day-of-week header
 
 
 	initialize: function() {
-		this.dayGrid = new DayGrid(this);
-		this.coordMap = this.dayGrid.coordMap; // the view's date-to-cell mapping is identical to the subcomponent's
+		this.dayGrid = this.instantiateDayGrid();
+	},
+
+
+	// Generates the DayGrid object this view needs. Draws from this.dayGridClass
+	instantiateDayGrid: function() {
+		// generate a subclass on the fly with BasicView-specific behavior
+		// TODO: cache this subclass
+		var subclass = this.dayGridClass.extend(basicDayGridMethods);
+
+		return new subclass(this);
 	},
 
 
@@ -52,44 +63,55 @@ var BasicView = fcViews.basic = View.extend({
 
 
 	// Renders the view into `this.el`, which should already be assigned
-	render: function() {
+	renderDates: function() {
 
 		this.dayNumbersVisible = this.dayGrid.rowCnt > 1; // TODO: make grid responsible
 		this.weekNumbersVisible = this.opt('weekNumbers');
 		this.dayGrid.numbersVisible = this.dayNumbersVisible || this.weekNumbersVisible;
 
-		this.el.addClass('fc-basic-view').html(this.renderHtml());
-
-		this.headRowEl = this.el.find('thead .fc-row');
+		this.el.addClass('fc-basic-view').html(this.renderSkeletonHtml());
+		this.renderHead();
 
 		this.scrollerEl = this.el.find('.fc-day-grid-container');
-		this.dayGrid.coordMap.containerEl = this.scrollerEl; // constrain clicks/etc to the dimensions of the scroller
 
-		this.dayGrid.el = this.el.find('.fc-day-grid');
-		this.dayGrid.render(this.hasRigidRows());
+		this.dayGrid.setElement(this.el.find('.fc-day-grid'));
+		this.dayGrid.renderDates(this.hasRigidRows());
 	},
 
 
-	// Make subcomponents ready for cleanup
-	destroy: function() {
-		this.dayGrid.destroy();
-		View.prototype.destroy.call(this); // call the super-method
+	// render the day-of-week headers
+	renderHead: function() {
+		this.headContainerEl =
+			this.el.find('.fc-head-container')
+				.html(this.dayGrid.renderHeadHtml());
+		this.headRowEl = this.headContainerEl.find('.fc-row');
+	},
+
+
+	// Unrenders the content of the view. Since we haven't separated skeleton rendering from date rendering,
+	// always completely kill the dayGrid's rendering.
+	unrenderDates: function() {
+		this.dayGrid.unrenderDates();
+		this.dayGrid.removeElement();
+	},
+
+
+	renderBusinessHours: function() {
+		this.dayGrid.renderBusinessHours();
 	},
 
 
 	// Builds the HTML skeleton for the view.
 	// The day-grid component will render inside of a container defined by this HTML.
-	renderHtml: function() {
+	renderSkeletonHtml: function() {
 		return '' +
 			'<table>' +
-				'<thead>' +
+				'<thead class="fc-head">' +
 					'<tr>' +
-						'<td class="' + this.widgetHeaderClass + '">' +
-							this.dayGrid.headHtml() + // render the day-of-week headers
-						'</td>' +
+						'<td class="fc-head-container ' + this.widgetHeaderClass + '"></td>' +
 					'</tr>' +
 				'</thead>' +
-				'<tbody>' +
+				'<tbody class="fc-body">' +
 					'<tr>' +
 						'<td class="' + this.widgetContentClass + '">' +
 							'<div class="fc-day-grid-container">' +
@@ -99,73 +121,6 @@ var BasicView = fcViews.basic = View.extend({
 					'</tr>' +
 				'</tbody>' +
 			'</table>';
-	},
-
-
-	// Generates the HTML that will go before the day-of week header cells.
-	// Queried by the DayGrid subcomponent when generating rows. Ordering depends on isRTL.
-	headIntroHtml: function() {
-		if (this.weekNumbersVisible) {
-			return '' +
-				'<th class="fc-week-number ' + this.widgetHeaderClass + '" ' + this.weekNumberStyleAttr() + '>' +
-					'<span>' + // needed for matchCellWidths
-						htmlEscape(this.opt('weekNumberTitle')) +
-					'</span>' +
-				'</th>';
-		}
-	},
-
-
-	// Generates the HTML that will go before content-skeleton cells that display the day/week numbers.
-	// Queried by the DayGrid subcomponent. Ordering depends on isRTL.
-	numberIntroHtml: function(row) {
-		if (this.weekNumbersVisible) {
-			return '' +
-				'<td class="fc-week-number" ' + this.weekNumberStyleAttr() + '>' +
-					'<span>' + // needed for matchCellWidths
-						this.calendar.calculateWeekNumber(this.dayGrid.getCell(row, 0).start) +
-					'</span>' +
-				'</td>';
-		}
-	},
-
-
-	// Generates the HTML that goes before the day bg cells for each day-row.
-	// Queried by the DayGrid subcomponent. Ordering depends on isRTL.
-	dayIntroHtml: function() {
-		if (this.weekNumbersVisible) {
-			return '<td class="fc-week-number ' + this.widgetContentClass + '" ' +
-				this.weekNumberStyleAttr() + '></td>';
-		}
-	},
-
-
-	// Generates the HTML that goes before every other type of row generated by DayGrid. Ordering depends on isRTL.
-	// Affects helper-skeleton and highlight-skeleton rows.
-	introHtml: function() {
-		if (this.weekNumbersVisible) {
-			return '<td class="fc-week-number" ' + this.weekNumberStyleAttr() + '></td>';
-		}
-	},
-
-
-	// Generates the HTML for the <td>s of the "number" row in the DayGrid's content skeleton.
-	// The number row will only exist if either day numbers or week numbers are turned on.
-	numberCellHtml: function(cell) {
-		var date = cell.start;
-		var classes;
-
-		if (!this.dayNumbersVisible) { // if there are week numbers but not day numbers
-			return '<td/>'; //  will create an empty space above events :(
-		}
-
-		classes = this.dayGrid.getDayClasses(date);
-		classes.unshift('fc-day-number');
-
-		return '' +
-			'<td class="' + classes.join(' ') + '" data-date="' + date.format() + '">' +
-				date.date() +
-			'</td>';
 	},
 
 
@@ -210,7 +165,7 @@ var BasicView = fcViews.basic = View.extend({
 		unsetScroller(this.scrollerEl);
 		uncompensateScroll(this.headRowEl);
 
-		this.dayGrid.destroySegPopover(); // kill the "more" popover if displayed
+		this.dayGrid.removeSegPopover(); // kill the "more" popover if displayed
 
 		// is the event limit a constant level number?
 		if (eventLimit && typeof eventLimit === 'number') {
@@ -232,8 +187,6 @@ var BasicView = fcViews.basic = View.extend({
 			// doing the scrollbar compensation might have created text overflow which created more height. redo
 			scrollerHeight = this.computeScrollerHeight(totalHeight);
 			this.scrollerEl.height(scrollerHeight);
-
-			this.restoreScroll();
 		}
 	},
 
@@ -246,6 +199,36 @@ var BasicView = fcViews.basic = View.extend({
 		else {
 			distributeHeight(this.dayGrid.rowEls, height, true); // true = compensate for height-hogging rows
 		}
+	},
+
+
+	/* Hit Areas
+	------------------------------------------------------------------------------------------------------------------*/
+	// forward all hit-related method calls to dayGrid
+
+
+	prepareHits: function() {
+		this.dayGrid.prepareHits();
+	},
+
+
+	releaseHits: function() {
+		this.dayGrid.releaseHits();
+	},
+
+
+	queryHit: function(left, top) {
+		return this.dayGrid.queryHit(left, top);
+	},
+
+
+	getHitSpan: function(hit) {
+		return this.dayGrid.getHitSpan(hit);
+	},
+
+
+	getHitEl: function(hit) {
+		return this.dayGrid.getHitEl(hit);
 	},
 
 
@@ -268,9 +251,8 @@ var BasicView = fcViews.basic = View.extend({
 
 
 	// Unrenders all event elements and clears internal segment data
-	destroyEvents: function() {
-		this.recordScroll(); // removing events will reduce height and mess with the scroll, so record beforehand
-		this.dayGrid.destroyEvents();
+	unrenderEvents: function() {
+		this.dayGrid.unrenderEvents();
 
 		// we DON'T need to call updateHeight() because:
 		// A) a renderEvents() call always happens after this, which will eventually call updateHeight()
@@ -288,8 +270,8 @@ var BasicView = fcViews.basic = View.extend({
 	},
 
 
-	destroyDrag: function() {
-		this.dayGrid.destroyDrag();
+	unrenderDrag: function() {
+		this.dayGrid.unrenderDrag();
 	},
 
 
@@ -298,14 +280,80 @@ var BasicView = fcViews.basic = View.extend({
 
 
 	// Renders a visual indication of a selection
-	renderSelection: function(range) {
-		this.dayGrid.renderSelection(range);
+	renderSelection: function(span) {
+		this.dayGrid.renderSelection(span);
 	},
 
 
 	// Unrenders a visual indications of a selection
-	destroySelection: function() {
-		this.dayGrid.destroySelection();
+	unrenderSelection: function() {
+		this.dayGrid.unrenderSelection();
 	}
 
 });
+
+
+// Methods that will customize the rendering behavior of the BasicView's dayGrid
+var basicDayGridMethods = {
+
+
+	// Generates the HTML that will go before the day-of week header cells
+	renderHeadIntroHtml: function() {
+		var view = this.view;
+
+		if (view.weekNumbersVisible) {
+			return '' +
+				'<th class="fc-week-number ' + view.widgetHeaderClass + '" ' + view.weekNumberStyleAttr() + '>' +
+					'<span>' + // needed for matchCellWidths
+						htmlEscape(view.opt('weekNumberTitle')) +
+					'</span>' +
+				'</th>';
+		}
+
+		return '';
+	},
+
+
+	// Generates the HTML that will go before content-skeleton cells that display the day/week numbers
+	renderNumberIntroHtml: function(row) {
+		var view = this.view;
+
+		if (view.weekNumbersVisible) {
+			return '' +
+				'<td class="fc-week-number" ' + view.weekNumberStyleAttr() + '>' +
+					'<span>' + // needed for matchCellWidths
+						this.getCellDate(row, 0).format('w') +
+					'</span>' +
+				'</td>';
+		}
+
+		return '';
+	},
+
+
+	// Generates the HTML that goes before the day bg cells for each day-row
+	renderBgIntroHtml: function() {
+		var view = this.view;
+
+		if (view.weekNumbersVisible) {
+			return '<td class="fc-week-number ' + view.widgetContentClass + '" ' +
+				view.weekNumberStyleAttr() + '></td>';
+		}
+
+		return '';
+	},
+
+
+	// Generates the HTML that goes before every other type of row generated by DayGrid.
+	// Affects helper-skeleton and highlight-skeleton rows.
+	renderIntroHtml: function() {
+		var view = this.view;
+
+		if (view.weekNumbersVisible) {
+			return '<td class="fc-week-number" ' + view.weekNumberStyleAttr() + '></td>';
+		}
+
+		return '';
+	}
+
+};

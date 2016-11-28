@@ -10,8 +10,9 @@
 <script>
 
 	$(document).ready(function() {
+		var calendar = $('#calendar');
 
-		$('#calendar').fullCalendar({
+		calendar.fullCalendar({
 			header: {
 				left: 'prev,next today',
 				center: 'title',
@@ -19,7 +20,6 @@
 			},
 			defaultDate: '2015-01-12',
 			defaultView: 'year',
-			yearColumns: 3,
 			selectable: true,
 			selectHelper: true,
 			select: function(start, end) {
@@ -31,9 +31,9 @@
 						start: start,
 						end: end
 					};
-					$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+					calendar.fullCalendar('renderEvent', eventData, true); // stick? = true
 				}
-				$('#calendar').fullCalendar('unselect');
+				calendar.fullCalendar('unselect');
 			},
 			firstDay: 0,
 			editable: true,
