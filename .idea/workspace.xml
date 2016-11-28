@@ -1,399 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="481b6488-6fa3-4189-ba57-764662a8a8ad" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.bowerrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/cdnjs-commit.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/cdnjs.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/demo-date-update.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/jscs.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/jshint.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/release.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/tasks/generateLanguages.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/watch.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/changelog.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/agenda-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/background-events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/basic-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/external-dragging.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/gcal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/json/events.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/languages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/php/get-events.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/php/get-timezones.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/php/utils.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/school.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/selectable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/theme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/timezones.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/year-french.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demos/year.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fullcalendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fullcalendar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fullcalendar.print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/gcal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang-all.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ar-ma.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ar-sa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ar-tn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/de-at.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/en-au.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/en-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/is.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/sr-cyrl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lang/zh-tw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fullcalendar.jquery.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/in.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/is.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/iw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/tl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lang/zh-tw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lumbar.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EventManager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/agenda/AgendaDayView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/agenda/AgendaView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/agenda/AgendaWeekView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/agenda/agenda.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/basic/BasicDayView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/basic/BasicView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/basic/BasicWeekView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/basic/MonthView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/basic/basic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/Class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/CoordMap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/DayGrid.events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/DayGrid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/DayGrid.limit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/DragListener.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/Grid.events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/Grid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/MouseFollower.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/Popover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/RowRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/TimeGrid.events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/TimeGrid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/View.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/common.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/common/print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/date-formatting.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/defaults.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/gcal/gcal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/intro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lang.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/moment-ext.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/outro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/year/YearView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/year/year.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/Agenda-render.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/DayGrid-events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/TimeGrid-events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/View.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/addEventSource.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/agenda-view.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/allDayDefault.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/allDaySlot.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/allDayText.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/aspectRatio.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/axisFormat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/background-events.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/basic-view.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/businessHours.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/buttonIcons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/buttonText.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/columnFormat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/constraint.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/constructor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/current-date.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/custom-view-class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/custom-view-duration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/dayClick.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/dayNames.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/dayNamesShort.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/dayPopoverFormat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/dayRender.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/defaultAllDayEventDuration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/defaultTimedEventDuration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/destroy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/displayEventEnd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/event-dnd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/event-feed-param.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/event-obj.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/event-resize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/eventDestroy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/eventLimit-popover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/eventLimit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/eventLimitClick.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/eventLimitText.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/eventMouseover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/eventRender.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/events-array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/events-function.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/events-gcal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/events-json-feed.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/external-dnd-advanced.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/external-dnd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/firstDay.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/fixedWeekCount.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/forceEventDuration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/formatRange.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/handleWindowResize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/header-navigation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/header-rendering.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/height-and-contentHeight.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/hiddenDays.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/isRTL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/lang.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/maxTime.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/minTime.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/moment-ambig.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/moment-construct.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/moment-formatting.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/moment-misc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/moment-query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/monthNames.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/monthNamesShort.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/nextDayThreshold.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/now.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/overlap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/removeEventSource.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/removeEvents.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/scrollTime.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/select-callback.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/select-method.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/selectHelper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/slotDuration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/template.js.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/themeButtonIcons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/timeFormat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/timezone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/titleFormat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/unselectAuto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/updateEvent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/views-specific-options.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/weekMode.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/weekNumberCalculation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/weekNumberTitle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/weekNumbers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/automated/weekends.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/blank.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/bootstrap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/data_as_a_function.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/date_util_test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/day_render.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/dbclick.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/droppable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/event_data_transform.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/event_stress_test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/fullheight.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/gcal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/hiddenDays.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/iframe.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_1035.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_2048.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_206_parseDate_dst.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_2154.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_220_buttons_ie6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_221_quick_remove_source.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_230_height_json_events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_244_aspectRatio_0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_251_empty_end_date.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_333_blinking.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_417_refetchEvents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_429_gotoDate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_477_event_width.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_517_js_error_ie.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_554.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_586_refetchEvents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_616.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_679.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_688_parseInt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_740_event_resizing.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_750.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/issue_757_removeEvents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/languages-datepicker.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/dnd-resize-utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_loading.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_nav_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_nav_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_n.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_ne.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_nw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_s.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_se.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_sw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_shadow_w.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_title_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_title_main.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_title_over.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancy_title_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancybox-x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancybox-y.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/fancybox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/jquery.easing-1.3.pack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/jquery.fancybox-1.3.4.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/jquery.fancybox-1.3.4.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/jquery.fancybox-1.3.4.pack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/fancybox/jquery.mousewheel-3.0.4.pack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/jasmine-ext.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/jquery-1.4.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/jquery-simulate-hacks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/buttonbg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/icon_color_arrow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/menuhoverbg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_black_matte.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_black_tie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_blitzer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_cupertino.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_dark_hive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_dot_luv.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_eggplant.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_excite_bike.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_flick.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_hot_sneaks.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_humanity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_le_frog.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_mint_choco.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_overcast.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_pepper_grinder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_smoothness.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_south_street.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_start_menu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_sunny.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_swanky_purse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_trontastic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_ui_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_ui_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/images/theme_90_windoze.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/lib/themeswitcher/jquery.themeswitcher.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/liquidwidth.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/locale.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/long_event_titles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/many_agenda_events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/many_agenda_events_json.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/many_events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/many_events_json.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/memory_leak.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/method_destroy.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/methods.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/no_event_titles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/options.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/past_future_classNames.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/plain.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/selectable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/short_agenda.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/skip-redraw-test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/slotEventOverlap-demo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/slot_event_overlap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/slot_event_overlap.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/snap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/sources.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/sources_new.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/stacking.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/tabs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/theming.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/triggers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/triggers_view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/week_numbers.html" afterPath="" />
-    </list>
-    <ignored path="fullcalendar.iws" />
+    <list default="true" id="28205d3b-c08b-43a5-8762-318d961704af" name="Default" comment="" />
+    <ignored path="fullcalendar-master.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -408,12 +17,22 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="fullcalendar" />
+    <favorites_list name="fullcalendar-master" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="jquery-ui.custom.min.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/temp/archive/lib/jquery-ui.custom.min.js">
+      <file leaf-file-name="default.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demos/default.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="year.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/year/year.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -422,19 +41,74 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="year.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demos/year.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YearView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/year/YearView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/demos/year.html" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER">
+    <gruntfile path="$PROJECT_DIR$/Gruntfile.js" />
+  </component>
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -442,10 +116,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1358" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -454,7 +128,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -472,51 +146,43 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fullcalendar" />
+              <option name="myItemId" value="fullcalendar-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fullcalendar" />
+              <option name="myItemId" value="fullcalendar-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fullcalendar" />
+              <option name="myItemId" value="fullcalendar-master" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/fullcalendar-master/fullcalendar-master" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\fullcalendar" />
+      <recent name="C:\Users\Software2\Downloads\fullcalendar-master\fullcalendar-master\demos" />
+      <recent name="C:\Users\Software2\Downloads\fullcalendar-master\fullcalendar-master\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.default.html">
-    <configuration default="false" name="year.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fullcalendar/demos/year.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="agenda-views.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fullcalendar/demos/agenda-views.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="default.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fullcalendar/demos/default.html">
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -553,87 +219,51 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.year.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.agenda-views.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.default.html" />
-    </list>
-    <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.default.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.agenda-views.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.year.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="481b6488-6fa3-4189-ba57-764662a8a8ad" name="Default" comment="" />
-      <created>1480326519632</created>
+      <changelist id="28205d3b-c08b-43a5-8762-318d961704af" name="Default" comment="" />
+      <created>1480332689400</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1480326519632</updated>
-      <workItem from="1480326520951" duration="5648000" />
+      <updated>1480332689400</updated>
+      <workItem from="1480332690699" duration="1363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5648000" />
+    <option name="totallyTimeSpent" value="1363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="1358" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25768667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27762803" sideWeight="0.5043924" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4865229" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28346458" sideWeight="0.4956076" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25768667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27762803" sideWeight="0.5043924" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3328841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4865229" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28444445" sideWeight="0.4956076" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7884097" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46270928" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45148247" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18228404" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27762803" sideWeight="0.5043924" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46270928" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45148247" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4865229" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28402367" sideWeight="0.4956076" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25768667" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18228404" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3328841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7884097" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -651,45 +281,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/changelog.md">
-      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="170">
-            <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/agenda-views.html">
+    <entry file="file://$PROJECT_DIR$/src/year/year.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -697,42 +289,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/php/get-timezones.php">
+    <entry file="file://$PROJECT_DIR$/demos/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="85">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/php/get-events.php">
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/fullcalendar.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/year/YearView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="177" column="49" selection-start-line="177" selection-start-column="49" selection-end-line="177" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/languages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="138" column="18" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+        <state relative-caret-position="-102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -740,15 +346,7 @@
     <entry file="file://$PROJECT_DIR$/demos/year.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/temp/archive/lib/jquery-ui.custom.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding />
         </state>
       </provider>
