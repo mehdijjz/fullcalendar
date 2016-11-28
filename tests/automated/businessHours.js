@@ -18,13 +18,23 @@ describe('businessHours', function() {
 		$('#cal').fullCalendar('next'); // move out of the original month range...
 		$('#cal').fullCalendar('next'); // ... out. should render correctly.
 
-		expect($('.fc-nonbusiness').length).toBe(12);
-		expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-nonbusiness').length).toBe(1); // column 0
-		expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-nonbusiness').length).toBe(2); // column 1
-		expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-nonbusiness').length).toBe(2); // column 2
-		expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-nonbusiness').length).toBe(2); // column 3
-		expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-nonbusiness').length).toBe(2); // column 4
-		expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-nonbusiness').length).toBe(2); // column 5
-		expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-nonbusiness').length).toBe(1); // column 6
+		// whole days
+		expect($('.fc-day-grid .fc-nonbusiness').length).toBe(2); // each multi-day stretch is one element
+
+		// timed area
+		expect($('.fc-time-grid .fc-nonbusiness').length).toBe(12);
+		expect(queryNonBusinessSegsInCol(0).length).toBe(1);
+		expect(queryNonBusinessSegsInCol(1).length).toBe(2);
+		expect(queryNonBusinessSegsInCol(2).length).toBe(2);
+		expect(queryNonBusinessSegsInCol(3).length).toBe(2);
+		expect(queryNonBusinessSegsInCol(4).length).toBe(2);
+		expect(queryNonBusinessSegsInCol(5).length).toBe(2);
+		expect(queryNonBusinessSegsInCol(6).length).toBe(1);
 	});
+
+
+	function queryNonBusinessSegsInCol(col) {
+		return $('.fc-time-grid .fc-content-skeleton td:not(.fc-axis):eq(' + col + ') .fc-nonbusiness');
+	}
+
 });

@@ -1,5 +1,5 @@
 
-var defaults = {
+Calendar.defaults = {
 
 	titleRangeSeparator: ' \u2014 ', // emphasized dash
 	monthYearFormat: 'MMMM YYYY', // required for en. other languages rely on datepicker computable option
@@ -24,6 +24,10 @@ var defaults = {
 	weekNumberCalculation: 'local',
 	
 	//editable: false,
+
+	//nowIndicator: false,
+
+	scrollTime: '06:00:00',
 	
 	// event ajax
 	lazyFetching: true,
@@ -35,24 +39,15 @@ var defaults = {
 
 	//allDayDefault: undefined,
 
-	// date restriction
-	minDate: null,
-	maxDate: null,
-
-	// year view
-	firstDay: 0, // start day of the week (Sunday)
-	yearTitleFormat: 'YYYY',
-	yearFormat: 'YYYY',
-
 	// locale
 	isRTL: false,
-	defaultButtonText: {
+	buttonText: {
 		prev: "prev",
 		next: "next",
 		prevYear: "prev year",
 		nextYear: "next year",
+		year: 'year', // TODO: locale files need to specify this
 		today: 'today',
-		year: 'year',
 		month: 'month',
 		week: 'week',
 		day: 'day'
@@ -74,6 +69,7 @@ var defaults = {
 		nextYear: 'seek-next'
 	},
 
+	//eventResizableFromStart: false,
 	dragOpacity: .75,
 	dragRevertDuration: 500,
 	dragScroll: true,
@@ -82,6 +78,8 @@ var defaults = {
 	unselectAuto: true,
 	
 	dropAccept: '*',
+
+	eventOrder: 'title',
 
 	eventLimit: false,
 	eventLimitText: 'more',
@@ -94,14 +92,13 @@ var defaults = {
 };
 
 
-var englishDefaults = {
+Calendar.englishDefaults = { // used by lang.js
 	dayPopoverFormat: 'dddd, MMMM D'
 };
 
 
-// right-to-left defaults
-var rtlDefaults = {
-	header: {
+Calendar.rtlDefaults = { // right-to-left defaults
+	header: { // TODO: smarter solution (first/center/last ?)
 		left: 'next,prev today',
 		center: '',
 		right: 'title'

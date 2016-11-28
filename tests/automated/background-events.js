@@ -1,6 +1,8 @@
 
 describe('background events', function() {
 
+	// SEE ALSO: event-color.js
+
 	var options;
 
 	beforeEach(function() {
@@ -93,10 +95,10 @@ describe('background events', function() {
 					$('#cal').fullCalendar(options);
 				});
 			});
-			it('does not render business hours even when activated', function(done) {
+			it('renders "business hours" on whole days', function(done) {
 				options.businessHours = true;
 				options.eventAfterAllRender = function() {
-					expect($('.fc-nonbusiness').length).toBe(0);
+					expect($('.fc-nonbusiness').length).toBe(12); // there are 6 weeks. 2 weekend days each
 					done();
 				};
 				$('#cal').fullCalendar(options);
@@ -325,62 +327,6 @@ describe('background events', function() {
 			});
 		});
 
-		it('can have custom Event Object color', function(done) {
-			options.events = [ {
-				start: '2014-11-04',
-				rendering: 'background',
-				color: 'red'
-			} ];
-			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
-				done();
-			};
-			$('#cal').fullCalendar(options);
-		});
-
-		it('can have custom Event Object backgroundColor', function(done) {
-			options.events = [ {
-				start: '2014-11-04',
-				rendering: 'background',
-				backgroundColor: 'red'
-			} ];
-			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
-				done();
-			};
-			$('#cal').fullCalendar(options);
-		});
-
-		it('can have custom Event Source color', function(done) {
-			options.eventSources = [ {
-				color: 'red',
-				events: [ {
-					start: '2014-11-04',
-					rendering: 'background'
-				} ]
-			} ];
-			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
-				done();
-			};
-			$('#cal').fullCalendar(options);
-		});
-
-		it('can have custom Event Source backgroundColor', function(done) {
-			options.eventSources = [ {
-				backgroundColor: 'red',
-				events: [ {
-					start: '2014-11-04',
-					rendering: 'background'
-				} ]
-			} ];
-			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
-				done();
-			};
-			$('#cal').fullCalendar(options);
-		});
-
 		describe('when in month view', function() {
 			it('can be activated when rendering set on the source', function(done) {
 				options.defaultView = 'month';
@@ -432,7 +378,7 @@ describe('background events', function() {
 				} ];
 				options.eventAfterAllRender = function() {
 					expect($('.fc-bgevent').length).toBe(1);
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(1); // column 2
+					expect(queryBgEventsInCol(2).length).toBe(1); // column 2
 					expect($('.fc-bgevent')).toBeBelow('.fc-slats tr:eq(0)'); // should be 1am (eq(1)) but FF cmplaning
 					expect($('.fc-bgevent')).toBeAbove('.fc-slats tr:eq(10)'); // 5am
 					expect($('.fc-event').length).toBe(0);
@@ -449,8 +395,8 @@ describe('background events', function() {
 				} ];
 				options.eventAfterAllRender = function() {
 					expect($('.fc-bgevent').length).toBe(2);
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(1); // column 2
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(1); // column 3
+					expect(queryBgEventsInCol(2).length).toBe(1);
+					expect(queryBgEventsInCol(3).length).toBe(1);
 					// TODO: maybe check y coords
 					done();
 				};
@@ -471,8 +417,8 @@ describe('background events', function() {
 				];
 				options.eventAfterAllRender = function() {
 					expect($('.fc-bgevent').length).toBe(4);
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(2); // column 2
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(2); // column 3
+					expect(queryBgEventsInCol(2).length).toBe(2);
+					expect(queryBgEventsInCol(3).length).toBe(2);
 					// TODO: maybe check y coords
 					done();
 				};
@@ -482,7 +428,8 @@ describe('background events', function() {
 				it('renders correctly if assumed default', function() {
 					options.businessHours = true;
 					$('#cal').fullCalendar(options);
-					expect($('.fc-nonbusiness').length).toBe(12);
+					expect($('.fc-day-grid .fc-nonbusiness').length).toBe(2); // whole days in the day area
+					expect($('.fc-time-grid .fc-nonbusiness').length).toBe(12); // strips of gray on the timed area
 				});
 				it('renders correctly if custom', function() {
 					options.businessHours = {
@@ -491,14 +438,19 @@ describe('background events', function() {
 						dow: [ 1, 2, 3, 4 ] // Mon-Thu
 					};
 					$('#cal').fullCalendar(options);
-					expect($('.fc-nonbusiness').length).toBe(11);
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-nonbusiness').length).toBe(1); // column 0
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-nonbusiness').length).toBe(2); // column 1
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-nonbusiness').length).toBe(2); // column 2
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-nonbusiness').length).toBe(2); // column 3
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-nonbusiness').length).toBe(2); // column 4
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-nonbusiness').length).toBe(1); // column 5
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-nonbusiness').length).toBe(1); // column 6
+
+					// whole days
+					expect($('.fc-day-grid .fc-nonbusiness').length).toBe(2); // each multi-day stretch is one element
+
+					// time area
+					expect($('.fc-time-grid .fc-nonbusiness').length).toBe(11);
+					expect(queryNonBusinessSegsInCol(0).length).toBe(1);
+					expect(queryNonBusinessSegsInCol(1).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(2).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(3).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(4).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(5).length).toBe(1);
+					expect(queryNonBusinessSegsInCol(6).length).toBe(1);
 				});
 			});
 		});
@@ -514,7 +466,7 @@ describe('background events', function() {
 				} ];
 				options.eventAfterAllRender = function() {
 					expect($('.fc-bgevent').length).toBe(1);
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-bgevent').length).toBe(1); // column 4
+					expect(queryBgEventsInCol(4).length).toBe(1);
 					expect($('.fc-bgevent')).toBeBelow('.fc-slats tr:eq(0)'); // should be 1am (eq(1)) but FF cmplaining
 					expect($('.fc-bgevent')).toBeAbove('.fc-slats tr:eq(10)'); // 5am
 					done();
@@ -529,8 +481,8 @@ describe('background events', function() {
 				} ];
 				options.eventAfterAllRender = function() {
 					expect($('.fc-bgevent').length).toBe(2);
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(1); // column 3
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-bgevent').length).toBe(1); // column 4
+					expect(queryBgEventsInCol(3).length).toBe(1);
+					expect(queryBgEventsInCol(4).length).toBe(1);
 					done();
 				};
 				$('#cal').fullCalendar(options);
@@ -543,14 +495,19 @@ describe('background events', function() {
 						dow: [ 1, 2, 3, 4 ] // Mon-Thu
 					};
 					$('#cal').fullCalendar(options);
-					expect($('.fc-nonbusiness').length).toBe(11);
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-nonbusiness').length).toBe(1); // column 0
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-nonbusiness').length).toBe(1); // column 1
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-nonbusiness').length).toBe(2); // column 2
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-nonbusiness').length).toBe(2); // column 3
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-nonbusiness').length).toBe(2); // column 4
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-nonbusiness').length).toBe(2); // column 5
-					expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-nonbusiness').length).toBe(1); // column 6
+
+					// whole days
+					expect($('.fc-day-grid .fc-nonbusiness').length).toBe(2); // each stretch of days is one element
+
+					// time area
+					expect($('.fc-time-grid .fc-nonbusiness').length).toBe(11);
+					expect(queryNonBusinessSegsInCol(0).length).toBe(1);
+					expect(queryNonBusinessSegsInCol(1).length).toBe(1);
+					expect(queryNonBusinessSegsInCol(2).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(3).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(4).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(5).length).toBe(2);
+					expect(queryNonBusinessSegsInCol(6).length).toBe(1);
 				});
 			});
 		});
@@ -567,13 +524,13 @@ describe('background events', function() {
 					} ];
 					options.eventAfterAllRender = function() {
 						expect($('.fc-bgevent').length).toBe(8);
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-bgevent').length).toBe(1); // column 0
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-bgevent').length).toBe(1); // column 1
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(2); // column 2
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(1); // column 3
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-bgevent').length).toBe(1); // column 4
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-bgevent').length).toBe(1); // column 5
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-bgevent').length).toBe(1); // column 6
+						expect(queryBgEventsInCol(0).length).toBe(1);
+						expect(queryBgEventsInCol(1).length).toBe(1);
+						expect(queryBgEventsInCol(2).length).toBe(2);
+						expect(queryBgEventsInCol(3).length).toBe(1);
+						expect(queryBgEventsInCol(4).length).toBe(1);
+						expect(queryBgEventsInCol(5).length).toBe(1);
+						expect(queryBgEventsInCol(6).length).toBe(1);
 						// TODO: maybe check y coords
 						done();
 					};
@@ -588,13 +545,13 @@ describe('background events', function() {
 					} ];
 					options.eventAfterAllRender = function() {
 						expect($('.fc-bgevent').length).toBe(7);
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-bgevent').length).toBe(1); // column 0
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-bgevent').length).toBe(1); // column 1
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(1); // column 2
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(1); // column 3
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-bgevent').length).toBe(1); // column 4
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-bgevent').length).toBe(1); // column 5
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-bgevent').length).toBe(1); // column 6
+						expect(queryBgEventsInCol(0).length).toBe(1);
+						expect(queryBgEventsInCol(1).length).toBe(1);
+						expect(queryBgEventsInCol(2).length).toBe(1);
+						expect(queryBgEventsInCol(3).length).toBe(1);
+						expect(queryBgEventsInCol(4).length).toBe(1);
+						expect(queryBgEventsInCol(5).length).toBe(1);
+						expect(queryBgEventsInCol(6).length).toBe(1);
 						// TODO: maybe check y coords
 						done();
 					};
@@ -609,13 +566,13 @@ describe('background events', function() {
 					} ];
 					options.eventAfterAllRender = function() {
 						expect($('.fc-bgevent').length).toBe(5);
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-bgevent').length).toBe(0); // column 0
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-bgevent').length).toBe(0); // column 1
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(1); // column 2
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(1); // column 3
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-bgevent').length).toBe(1); // column 4
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-bgevent').length).toBe(1); // column 5
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-bgevent').length).toBe(1); // column 6
+						expect(queryBgEventsInCol(0).length).toBe(0);
+						expect(queryBgEventsInCol(1).length).toBe(0);
+						expect(queryBgEventsInCol(2).length).toBe(1);
+						expect(queryBgEventsInCol(3).length).toBe(1);
+						expect(queryBgEventsInCol(4).length).toBe(1);
+						expect(queryBgEventsInCol(5).length).toBe(1);
+						expect(queryBgEventsInCol(6).length).toBe(1);
 						// TODO: maybe check y coords
 						done();
 					};
@@ -630,9 +587,9 @@ describe('background events', function() {
 					} ];
 					options.eventAfterAllRender = function() {
 						expect($('.fc-bgevent').length).toBe(3);
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-bgevent').length).toBe(1); // column 0
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-bgevent').length).toBe(1); // column 1
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(1); // column 2
+						expect(queryBgEventsInCol(0).length).toBe(1);
+						expect(queryBgEventsInCol(1).length).toBe(1);
+						expect(queryBgEventsInCol(2).length).toBe(1);
 						// TODO: maybe check y coords
 						done();
 					};
@@ -656,13 +613,13 @@ describe('background events', function() {
 					];
 					options.eventAfterAllRender = function() {
 						expect($('.fc-bgevent').length).toBe(9);
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-bgevent').length).toBe(1); // column 0
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-bgevent').length).toBe(2); // column 1
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(1); // column 2
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(2); // column 3
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-bgevent').length).toBe(1); // column 4
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-bgevent').length).toBe(1); // column 5
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-bgevent').length).toBe(1); // column 6
+						expect(queryBgEventsInCol(0).length).toBe(1);
+						expect(queryBgEventsInCol(1).length).toBe(2);
+						expect(queryBgEventsInCol(2).length).toBe(1);
+						expect(queryBgEventsInCol(3).length).toBe(2);
+						expect(queryBgEventsInCol(4).length).toBe(1);
+						expect(queryBgEventsInCol(5).length).toBe(1);
+						expect(queryBgEventsInCol(6).length).toBe(1);
 						// TODO: maybe check y coords
 						done();
 					};
@@ -682,13 +639,13 @@ describe('background events', function() {
 					} ];
 					options.eventAfterAllRender = function() {
 						expect($('.fc-bgevent').length).toBe(8);
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(0) .fc-bgevent').length).toBe(1); // column 0
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(1) .fc-bgevent').length).toBe(1); // column 1
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(2) .fc-bgevent').length).toBe(1); // column 2
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(3) .fc-bgevent').length).toBe(1); // column 3
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(4) .fc-bgevent').length).toBe(2); // column 4
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(5) .fc-bgevent').length).toBe(1); // column 5
-						expect($('.fc-bgevent-skeleton td:not(.fc-axis):eq(6) .fc-bgevent').length).toBe(1); // column 6
+						expect(queryBgEventsInCol(0).length).toBe(1);
+						expect(queryBgEventsInCol(1).length).toBe(1);
+						expect(queryBgEventsInCol(2).length).toBe(1);
+						expect(queryBgEventsInCol(3).length).toBe(1);
+						expect(queryBgEventsInCol(4).length).toBe(2);
+						expect(queryBgEventsInCol(5).length).toBe(1);
+						expect(queryBgEventsInCol(6).length).toBe(1);
 						// TODO: maybe check y coords
 						done();
 					};
@@ -704,7 +661,7 @@ describe('background events', function() {
 				color: 'red'
 			} ];
 			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
+				expect($('.fc-bgevent').css('background-color')).toMatch(RED_REGEX);
 				done();
 			};
 			$('#cal').fullCalendar(options);
@@ -717,7 +674,7 @@ describe('background events', function() {
 				backgroundColor: 'red'
 			} ];
 			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
+				expect($('.fc-bgevent').css('background-color')).toMatch(RED_REGEX);
 				done();
 			};
 			$('#cal').fullCalendar(options);
@@ -732,7 +689,7 @@ describe('background events', function() {
 				} ]
 			} ];
 			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
+				expect($('.fc-bgevent').css('background-color')).toMatch(RED_REGEX);
 				done();
 			};
 			$('#cal').fullCalendar(options);
@@ -747,10 +704,50 @@ describe('background events', function() {
 				} ]
 			} ];
 			options.eventAfterAllRender = function() {
-				expect($('.fc-bgevent').css('background-color')).toMatch(/red|rgb\(255, 0, 0\)/);
+				expect($('.fc-bgevent').css('background-color')).toMatch(RED_REGEX);
+				done();
+			};
+			$('#cal').fullCalendar(options);
+		});
+
+		it('is affected by global eventColor', function(done) {
+			options.eventColor = 'red';
+			options.eventSources = [ {
+				events: [ {
+					start: '2014-11-04T01:00:00',
+					rendering: 'background'
+				} ]
+			} ];
+			options.eventAfterAllRender = function() {
+				expect($('.fc-bgevent').css('background-color')).toMatch(RED_REGEX);
+				done();
+			};
+			$('#cal').fullCalendar(options);
+		});
+
+		it('is affected by global eventBackgroundColor', function(done) {
+			options.eventBackgroundColor = 'red';
+			options.eventSources = [ {
+				events: [ {
+					start: '2014-11-04T01:00:00',
+					rendering: 'background'
+				} ]
+			} ];
+			options.eventAfterAllRender = function() {
+				expect($('.fc-bgevent').css('background-color')).toMatch(RED_REGEX);
 				done();
 			};
 			$('#cal').fullCalendar(options);
 		});
 	});
+
+
+	function queryBgEventsInCol(col) {
+		return $('.fc-time-grid .fc-content-skeleton td:not(.fc-axis):eq(' + col + ') .fc-bgevent');
+	}
+
+	function queryNonBusinessSegsInCol(col) {
+		return $('.fc-time-grid .fc-content-skeleton td:not(.fc-axis):eq(' + col + ') .fc-nonbusiness');
+	}
+
 });
