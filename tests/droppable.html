@@ -89,6 +89,8 @@
 			revertDuration: 0,
 			zIndex: 999
 		});
+
+		$('#sortable-events').sortable();
 		
 		$('#calendar2').fullCalendar({
 			//isRTL: true,
@@ -128,7 +130,7 @@
 		float: left;
 		}
 		
-	#external-events {
+	#external-events, #sortable-events {
 		position: relative;
 		left: 50px;
 		text-align: left;
@@ -139,7 +141,7 @@
 		background: #ccc;
 		}
 		
-	.external-event {
+	.external-event, .sortable-event {
 		height: 20px;
 		line-height: 20px;
 		color: #fff;
@@ -162,6 +164,11 @@
 	<div class='external-event'>Draggable 1</div>
 	<div class='external-event'>Draggable 2</div>
 	<div class='external-event for-calendar2'>Draggable 3</div>
+</div>
+<div id='sortable-events'>
+	<div class='sortable-event'>Sortable 1</div>
+	<div class='sortable-event'>Sortable 2</div>
+	<div class='sortable-event for-calendar2'>Sortable 3</div>
 </div>
 <div style='clear:both'></div>
 <div id='calendar2'></div>

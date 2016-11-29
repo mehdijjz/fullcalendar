@@ -9,9 +9,9 @@ DayGrid.mixin({
 	popoverSegs: null, // an array of segment objects that the segPopover holds. null when not visible
 
 
-	destroySegPopover: function() {
+	removeSegPopover: function() {
 		if (this.segPopover) {
-			this.segPopover.hide(); // will trigger destruction of `segPopover` and `popoverSegs`
+			this.segPopover.hide(); // in handler, will call segPopover's removeElement
 		}
 	},
 
@@ -51,11 +51,22 @@ DayGrid.mixin({
 		var rowHeight = rowEl.height(); // TODO: cache somehow?
 		var trEls = this.rowStructs[row].tbodyEl.children();
 		var i, trEl;
+		var trHeight;
+
+		function iterInnerHeights(i, childNode) {
+			trHeight = Math.max(trHeight, $(childNode).outerHeight());
+		}
 
 		// Reveal one level <tr> at a time and stop when we find one out of bounds
 		for (i = 0; i < trEls.length; i++) {
-			trEl = trEls.eq(i).removeClass('fc-limited'); // get and reveal
-			if (trEl.position().top + trEl.outerHeight() > rowHeight) {
+			trEl = trEls.eq(i).removeClass('fc-limited'); // reset to original state (reveal)
+
+			// with rowspans>1 and IE8, trEl.outerHeight() would return the height of the largest cell,
+			// so instead, find the tallest inner content element.
+			trHeight = 0;
+			trEl.find('> td > :first-child').each(iterInnerHeights);
+
+			if (trEl.position().top + trHeight > rowHeight) {
 				return i;
 			}
 		}
@@ -72,7 +83,6 @@ DayGrid.mixin({
 		var rowStruct = this.rowStructs[row];
 		var moreNodes = []; // array of "more" <a> links and <td> DOM nodes
 		var col = 0; // col #, left-to-right (not chronologically)
-		var cell;
 		var levelSegs; // array of segment objects in the last allowable level, ordered left-to-right
 		var cellMatrix; // a matrix (by level, then column) of all <td> jQuery elements in the row
 		var limitedNodes; // array of temporarily hidden level <tr> and segment <td> DOM nodes
@@ -88,11 +98,10 @@ DayGrid.mixin({
 		// Iterates through empty level cells and places "more" links inside if need be
 		function emptyCellsUntil(endCol) { // goes from current `col` to `endCol`
 			while (col < endCol) {
-				cell = _this.getCell(row, col);
-				segsBelow = _this.getCellSegs(cell, levelLimit);
+				segsBelow = _this.getCellSegs(row, col, levelLimit);
 				if (segsBelow.length) {
 					td = cellMatrix[levelLimit - 1][col];
-					moreLink = _this.renderMoreLink(cell, segsBelow);
+					moreLink = _this.renderMoreLink(row, col, segsBelow);
 					moreWrap = $('<div/>').append(moreLink);
 					td.append(moreWrap);
 					moreNodes.push(moreWrap[0]);
@@ -117,8 +126,7 @@ DayGrid.mixin({
 				colSegsBelow = [];
 				totalSegsBelow = 0;
 				while (col <= seg.rightCol) {
-					cell = this.getCell(row, col);
-					segsBelow = this.getCellSegs(cell, levelLimit);
+					segsBelow = this.getCellSegs(row, col, levelLimit);
 					colSegsBelow.push(segsBelow);
 					totalSegsBelow += segsBelow.length;
 					col++;
@@ -133,8 +141,11 @@ DayGrid.mixin({
 					for (j = 0; j < colSegsBelow.length; j++) {
 						moreTd = $('<td class="fc-more-cell"/>').attr('rowspan', rowspan);
 						segsBelow = colSegsBelow[j];
-						cell = this.getCell(row, seg.leftCol + j);
-						moreLink = this.renderMoreLink(cell, [ seg ].concat(segsBelow)); // count seg as hidden too
+						moreLink = this.renderMoreLink(
+							row,
+							seg.leftCol + j,
+							[ seg ].concat(segsBelow) // count seg as hidden too
+						);
 						moreWrap = $('<div/>').append(moreLink);
 						moreTd.append(moreWrap);
 						segMoreNodes.push(moreTd[0]);
@@ -172,7 +183,7 @@ DayGrid.mixin({
 
 	// Renders an <a> element that represents hidden event element for a cell.
 	// Responsible for attaching click handler as well.
-	renderMoreLink: function(cell, hiddenSegs) {
+	renderMoreLink: function(row, col, hiddenSegs) {
 		var _this = this;
 		var view = this.view;
 
@@ -182,10 +193,10 @@ DayGrid.mixin({
 			)
 			.on('click', function(ev) {
 				var clickOption = view.opt('eventLimitClick');
-				var date = cell.start;
+				var date = _this.getCellDate(row, col);
 				var moreEl = $(this);
-				var dayEl = _this.getCellDayEl(cell);
-				var allSegs = _this.getCellSegs(cell);
+				var dayEl = _this.getCellEl(row, col);
+				var allSegs = _this.getCellSegs(row, col);
 
 				// rescope the segments to be within the cell's date
 				var reslicedAllSegs = _this.resliceDaySegs(allSegs, date);
@@ -203,7 +214,7 @@ DayGrid.mixin({
 				}
 
 				if (clickOption === 'popover') {
-					_this.showSegPopover(cell, moreEl, reslicedAllSegs);
+					_this.showSegPopover(row, col, moreEl, reslicedAllSegs);
 				}
 				else if (typeof clickOption === 'string') { // a view name
 					view.calendar.zoomTo(date, clickOption);
@@ -213,7 +224,7 @@ DayGrid.mixin({
 
 
 	// Reveals the popover that displays all events within a cell
-	showSegPopover: function(cell, moreLink, segs) {
+	showSegPopover: function(row, col, moreLink, segs) {
 		var _this = this;
 		var view = this.view;
 		var moreWrap = moreLink.parent(); // the <div> wrapper around the <a>
@@ -224,19 +235,19 @@ DayGrid.mixin({
 			topEl = view.el; // will cause the popover to cover any sort of header
 		}
 		else {
-			topEl = this.rowEls.eq(cell.row); // will align with top of row
+			topEl = this.rowEls.eq(row); // will align with top of row
 		}
 
 		options = {
 			className: 'fc-more-popover',
-			content: this.renderSegPopoverContent(cell, segs),
+			content: this.renderSegPopoverContent(row, col, segs),
 			parentEl: this.el,
 			top: topEl.offset().top,
 			autoHide: true, // when the user clicks elsewhere, hide the popover
 			viewportConstrain: view.opt('popoverViewportConstrain'),
 			hide: function() {
-				// destroy everything when the popover is hidden
-				_this.segPopover.destroy();
+				// kill everything when the popover is hidden
+				_this.segPopover.removeElement();
 				_this.segPopover = null;
 				_this.popoverSegs = null;
 			}
@@ -257,10 +268,10 @@ DayGrid.mixin({
 
 
 	// Builds the inner DOM contents of the segment popover
-	renderSegPopoverContent: function(cell, segs) {
+	renderSegPopoverContent: function(row, col, segs) {
 		var view = this.view;
 		var isTheme = view.opt('theme');
-		var title = cell.start.format(view.opt('dayPopoverFormat'));
+		var title = this.getCellDate(row, col).format(view.opt('dayPopoverFormat'));
 		var content = $(
 			'<div class="fc-header ' + view.widgetHeaderClass + '">' +
 				'<span class="fc-close ' +
@@ -286,7 +297,9 @@ DayGrid.mixin({
 
 			// because segments in the popover are not part of a grid coordinate system, provide a hint to any
 			// grids that want to do drag-n-drop about which cell it came from
-			segs[i].cell = cell;
+			this.prepareHits();
+			segs[i].hit = this.getCellHit(row, col);
+			this.releaseHits();
 
 			segContainer.append(segs[i].el);
 		}
@@ -303,18 +316,23 @@ DayGrid.mixin({
 			return seg.event;
 		});
 
-		var dayStart = dayDate.clone().stripTime();
+		var dayStart = dayDate.clone();
 		var dayEnd = dayStart.clone().add(1, 'days');
 		var dayRange = { start: dayStart, end: dayEnd };
 
 		// slice the events with a custom slicing function
-		return this.eventsToSegs(
+		segs = this.eventsToSegs(
 			events,
 			function(range) {
-				var seg = intersectionToSeg(range, dayRange); // undefind if no intersection
+				var seg = intersectRanges(range, dayRange); // undefind if no intersection
 				return seg ? [ seg ] : []; // must return an array of segments
 			}
 		);
+
+		// force an order because eventsToSegs doesn't guarantee one
+		this.sortEventSegs(segs);
+
+		return segs;
 	},
 
 
@@ -333,14 +351,14 @@ DayGrid.mixin({
 
 	// Returns segments within a given cell.
 	// If `startLevel` is specified, returns only events including and below that level. Otherwise returns all segs.
-	getCellSegs: function(cell, startLevel) {
-		var segMatrix = this.rowStructs[cell.row].segMatrix;
+	getCellSegs: function(row, col, startLevel) {
+		var segMatrix = this.rowStructs[row].segMatrix;
 		var level = startLevel || 0;
 		var segs = [];
 		var seg;
 
 		while (level < segMatrix.length) {
-			seg = segMatrix[level][cell.col];
+			seg = segMatrix[level][col];
 			if (seg) {
 				segs.push(seg);
 			}
