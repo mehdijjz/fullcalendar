@@ -1,8 +1,11 @@
 build/temp
-dist
+dist/
 
 # npm modules
-node_modules
+node_modules/
 
 # bower components
 #lib/*/*
+
+#phpstorm config
+.idea/
