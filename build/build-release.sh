@@ -25,7 +25,7 @@ fi
 # will do everything necessary for a release,
 # including bumping version in .json files
 grunt bump --setversion=$version
-grunt dist
+grunt dist --force
 
 # save reference to current branch
 orig_ref=$(git symbolic-ref --quiet HEAD)
