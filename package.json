@@ -1,6 +1,6 @@
 {
   "name": "fullcalendar",
-  "version": "2.2.6-yearview",
+  "version": "1.99.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/tpruvot/fullcalendar.git"
@@ -17,7 +17,8 @@
   "copyright": "2015 Adam Shaw",
   "dependencies": {
     "jquery": ">=1.7.1",
-    "moment": ">=2.5.0"
+    "moment": ">=2.5.0",
+    "vow": "^0.4.13"
   },
   "devDependencies": {
     "underscore": "^1.4.4",
